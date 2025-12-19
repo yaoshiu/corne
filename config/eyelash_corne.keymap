@@ -71,6 +71,7 @@
             bindings = <&kp LA(LSHIFT)>;
             key-positions = <47 13>;
             layers = <0>;
+            slow-release;
         };
     };
 
