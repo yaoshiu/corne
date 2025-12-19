@@ -553,6 +553,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="89" y="87" width="28" height="26" class="combo"/>
 <text x="103" y="100" class="combo tap"><tspan style="font-size: 67%">&amp;soft_off</tspan></text>
 </g>
+<g class="combo combopos-1">
+<path d="M392,154 l346,47" class="combo"/>
+<path d="M392,154 l-346,-47" class="combo"/>
+<rect rx="6" ry="6" x="378" y="141" width="28" height="26" class="combo"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="383" y="145" height="18" width="18.0" class="combo tap glyph mdi:apple-keyboard-shift"/>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-NUMBER">
