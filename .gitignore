@@ -3,3 +3,6 @@ zmk/
 modules/
 tools/
 .west/
+.direnv
+eyelash_corne
+zephyr

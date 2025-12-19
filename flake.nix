@@ -44,8 +44,12 @@
               (python3.withPackages (
                 ps: with ps; [
                   west
+                  pyelftools
+                  setuptools
                 ]
               ))
+              cmake
+              ninja
             ];
           };
         };
