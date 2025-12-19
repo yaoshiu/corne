@@ -43,7 +43,6 @@
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
             tap-ms = <100>;
-            label = "SCROLL_ENCODER";
         };
     };
 
