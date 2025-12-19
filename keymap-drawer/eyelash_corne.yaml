@@ -112,7 +112,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:backspace$$', type: backspace}
-  - Alt+$$mdi:apple-keyboard-shift$$
+  - Gui+$$mdi:keyboard-space$$
   - $$mdi:bluetooth-off$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
