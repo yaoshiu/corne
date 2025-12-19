@@ -112,7 +112,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Alt+$$mdi:apple-keyboard-shift$$
   - $$mdi:bluetooth-off$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
@@ -199,6 +199,3 @@ layers:
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
-- p: [47, 13]
-  k: Alt+$$mdi:apple-keyboard-shift$$
-  l: [QWERTY]
