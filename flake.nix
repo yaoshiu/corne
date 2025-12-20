@@ -40,17 +40,24 @@
           # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
           packages.default = pkgs.hello;
           devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              (python3.withPackages (
-                ps: with ps; [
-                  west
-                  pyelftools
-                  setuptools
-                ]
-              ))
-              cmake
-              ninja
-            ];
+            packages =
+              with pkgs;
+              let
+                # https://github.com/NixOS/nixpkgs/pull/462090
+                horribleHackToFixPythonWithPackages =
+                  ppkgs:
+                  ppkgs.overrideAttrs (oldAttrs: {
+                    postBuild =
+                      assert !(lib.hasInfix "--resolve-argv0" oldAttrs.postBuild);
+                      lib.replaceString "--inherit-argv0" "--inherit-argv0 --resolve-argv0" oldAttrs.postBuild;
+                  });
+              in
+              [
+                uv
+                cmake
+                ninja
+                protobuf
+              ];
           };
         };
       flake = {
