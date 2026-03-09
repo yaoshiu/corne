@@ -55,11 +55,15 @@
             flavor = "tap-preferred";
         };
 
-       rgb_encoder: rgb_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-       };
+        h_bt_clr: h_bt_clr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "H_BT_CLR";
+            bindings = <&bt_clr>, <&none>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <2000>;
+        };
     };
 
     combos {
@@ -68,6 +72,36 @@
         softoff {
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
+        };
+    };
+
+    macros {
+        bt_clr: bt_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_CLR>;
+            label = "BT_CLR";
+        };
+
+        bt_0: bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>;
+            label = "BT_1";
+        };
+
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>;
+            label = "BT_1";
+        };
+
+        bt_3: bt_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>;
+            label = "BT_3";
         };
     };
 
@@ -89,10 +123,10 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans     &kp N1                 &kp N2               &kp N3               &kp N4               &kp N5                                               &mmv MOVE_Y(-400)                    &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans     &bt_hold BT_CLR_ALL 0  &bt_hold BT_SEL 0 0  &bt_hold BT_SEL 0 1  &bt_hold BT_SEL 0 2  &bt_hold BT_SEL 0 3               &mmv MOVE_X(-400)  &mkp LCLK          &mmv MOVE_X(400)  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&kp LCTRL  &rgb_ug RGB_OFF        &rgb_ug RGB_ON       &trans               &trans               &rgb_ug RGB_EFF      &mkp RCLK                       &mmv MOVE_Y(400)                     &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                                       &kp LGUI             &to 0                &trans                                                                                    &kp INS          &kp DEL          &trans
+&trans     &kp N1           &kp N2          &kp N3    &kp N4  &kp N5                                           &mmv MOVE_Y(-400)                    &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
+&trans     &h_bt_clr 0 0    &none           &none     &none   &none                         &mmv MOVE_X(-400)  &mkp LCLK          &mmv MOVE_X(400)  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
+&kp LCTRL  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans    &trans  &rgb_ug RGB_EFF  &mkp RCLK                       &mmv MOVE_Y(400)                     &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
+                                            &kp LGUI  &to 0   &trans                                                                                &kp INS          &kp DEL          &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
