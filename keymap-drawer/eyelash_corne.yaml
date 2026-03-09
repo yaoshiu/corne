@@ -64,11 +64,11 @@ layers:
   - {t: '0', s: )}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:minus-circle-outline$$', h: BT CLR ALL}
-  - '&bt_hold BT_SEL 0 0'
-  - '&bt_hold BT_SEL 0 1'
-  - '&bt_hold BT_SEL 0 2'
-  - '&bt_hold BT_SEL 0 3'
+  - {t: '$$mdi:minus-circle-outline$$', h: '&bt_clr'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '&mmv MOVE_X(-400)'
   - $$mdi:mouse-left-click-outline$$
   - '&mmv MOVE_X(400)'
