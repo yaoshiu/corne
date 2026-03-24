@@ -113,7 +113,7 @@ layers:
   - )
   - {t: '$$mdi:backspace$$', type: backspace}
   - Gui+$$mdi:keyboard-space$$
-  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:minus-circle-outline$$', h: '&bt_clr'}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click-outline$$
